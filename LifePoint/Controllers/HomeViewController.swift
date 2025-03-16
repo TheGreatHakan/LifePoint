@@ -77,10 +77,13 @@ class HomeViewController: UIViewController {
             tview.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
             tview.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tview.topAnchor.constraint(equalTo: segmentedView.bottomAnchor, constant: 10),
-            tview.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0)
+            tview.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 30)
+            
             
             
         ])
+        
+#warning("tab bar and table view intersecting")
     }
 
     @objc private func segmentChanged() {
@@ -112,7 +115,7 @@ extension HomeViewController: HomeChartViewDelegate {
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let count = 0
+        let count = 0 //temproary variable
         
         switch segmentedView.selectedSegmentIndex {
         case 1: return 5
