@@ -15,8 +15,9 @@ class MainTabBarController: UITabBarController {
         let habitTrackingVC = createVC(title: "Habits", imageName: "figure.disc.sports", selectedImage: "figure.disc.sports", rootVC: HabitTrackingViewController())
         let profileVC = createVC(title: "Profile", imageName: "person", selectedImage: "oerson.fill", rootVC: ProfileViewController())
         let homeVC = createVC(title: "Home", imageName: "house", selectedImage: "house.fill", rootVC: HomeViewController())
+        let authVC = createVC(title: "", imageName: "plus", rootVC: AuthenticationViewController())
         
-        viewControllers = [habitTrackingVC, homeVC, profileVC]
+        viewControllers = [authVC,habitTrackingVC, homeVC, profileVC]
     
         tabBar.tintColor = .blue
         tabBar.unselectedItemTintColor = .gray
@@ -36,7 +37,7 @@ class MainTabBarController: UITabBarController {
 //        newVC.tabBarItem.title = title
         newVC.tabBarItem.image = UIImage(systemName: imageName)
         newVC.tabBarItem.selectedImage = UIImage(systemName: selectedImage ?? imageName)
-        newVC.navigationBar.prefersLargeTitles = true
+//        newVC.navigationBar.prefersLargeTitles = true
         rootVC.navigationItem.title = title
         
         return newVC
